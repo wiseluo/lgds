@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 text-right">{:__('Image')}:</div>
+        <div class="col-xs-12 col-sm-8"><img src="{$course.image}"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 text-right">{:__('Type_id')}:</div>
+        <div class="col-xs-12 col-sm-8">{$course.courseType.name}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 text-right">{:__('Name')}:</div>
+        <div class="col-xs-12 col-sm-8">{$course.name}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 text-right">{:__('Detail')}:</div>
+        <div class="col-xs-12 col-sm-8">{$course.detail}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 text-right">{:__('Crowd')}:</div>
+        <div class="col-xs-12 col-sm-8">{$course.crowd}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 text-right">{:__('Periods_number')}:</div>
+        <div class="col-xs-12 col-sm-8">{$course.periods_number}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 text-right">{:__('Start_enroll_date')}:</div>
+        <div class="col-xs-12 col-sm-8">{:date('Y-m-d H:i', strtotime($course.start_enroll_date))}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 text-right">{:__('End_enroll_date')}:</div>
+        <div class="col-xs-12 col-sm-8">{:date('Y-m-d H:i', strtotime($course.end_enroll_date))}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 text-right">{:__('Begin_date')}:</div>
+        <div class="col-xs-12 col-sm-8">{:date('Y-m-d', strtotime($course.begin_date))}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 text-right">{:__('Close_date')}:</div>
+        <div class="col-xs-12 col-sm-8">{:date('Y-m-d', strtotime($course.close_date))}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 text-right">{:__('Class_time')}:</div>
+        <div class="col-xs-12 col-sm-8">{$course.class_time}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 text-right">{:__('Class_number')}:</div>
+        <div class="col-xs-12 col-sm-8">{$course.class_number}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 text-right">{:__('Class_location')}:</div>
+        <div class="col-xs-12 col-sm-8">{$course.class_location}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 text-right">{:__('Quota')}:</div>
+        <div class="col-xs-12 col-sm-8">{$course.quota}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 text-right">{:__('Remark')}:</div>
+        <div class="col-xs-12 col-sm-8">{$course.remark}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-2 text-right">{:__('Wx_qrcode')}:</div>
+        <div class="col-xs-12 col-sm-8"><img src="{$course.wx_qrcode}"></div>
+    </div>
+    <div class="row">
+        <table id="table" class="table table-striped table-bordered table-hover table-nowrap" width="100%">
+        
+        </table>
+    </div>
+</div>
+

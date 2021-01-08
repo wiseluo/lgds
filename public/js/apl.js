@@ -1,0 +1,1 @@
+(function(){window.HOST_TYPE = "2"; window.BMap_loadScriptTime = (new Date).getTime(); document.write('<script type="text/javascript" src="https://api.map.baidu.com/getscript?v=2.0&ak=kzkpedNQHx065s8eNZnS1I7DVSBl9Sbr&services=&t=20170803155555"></script>');})();

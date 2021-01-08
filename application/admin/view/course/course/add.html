@@ -1,0 +1,127 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Type_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-type_id" data-rule="required" data-source="course/coursetype/index" data-field="name" class="form-control selectpage" name="row[type_id]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" class="form-control" name="row[name]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Detail')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-detail" class="form-control " rows="5" name="row[detail]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Teachername')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-teachername" class="form-control" name="row[teachername]" type="text" value="" readonly>
+            <input id="c-teacherid" class="form-control" name="row[teacher_id]" type="hidden" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Crowd')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-crowd" class="form-control" name="row[crowd]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Periods_number')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-periods_number" class="form-control datetimepicker" data-date-format="YYYYMM" data-use-current="true" name="row[periods_number]" type="text" value="{:date('Ym')}" autocomplete="off">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Start_enroll_date')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-start_enroll_date" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm" data-use-current="true" name="row[start_enroll_date]" type="text" value="{:date('Y-m-d H:i')}" autocomplete="off">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('End_enroll_date')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-end_enroll_date" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm" data-use-current="true" name="row[end_enroll_date]" type="text" value="{:date('Y-m-d H:i')}" autocomplete="off">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Begin_date')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-begin_date" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" data-use-current="true" name="row[begin_date]" type="text" value="{:date('Y-m-d')}" autocomplete="off">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Close_date')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-close_date" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" data-use-current="true" name="row[close_date]" type="text" value="{:date('Y-m-d')}" autocomplete="off">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Class_time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-class_time" class="form-control" name="row[class_time]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Class_number')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-class_number" class="form-control" name="row[class_number]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Class_location')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-class_location" class="form-control" name="row[class_location]" type="text" value="">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Quota')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-quota" class="form-control" name="row[quota]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Remark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-remark" class="form-control " rows="5" name="row[remark]" cols="50"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-image" class="control-label col-xs-12 col-sm-2">{:__('Image')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-image" data-rule="" class="form-control" size="50" name="row[image]" type="text" value="">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-image" class="btn btn-danger plupload" data-input-id="c-image" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-image"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>(建议图片长宽比4:3)
+                </div>
+                <span class="msg-box n-right" for="c-image"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-image"></ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-wx_qrcode" class="control-label col-xs-12 col-sm-2">{:__('Wx_qrcode')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="c-wx_qrcode" data-rule="" class="form-control" size="50" name="row[wx_qrcode]" type="text" value="">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-wx_qrcode" class="btn btn-danger plupload" data-input-id="c-wx_qrcode" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-multiple="false" data-preview-id="p-wx_qrcode"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                </div>
+                <span class="msg-box n-right" for="c-wx_qrcode"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="p-wx_qrcode"></ul>
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

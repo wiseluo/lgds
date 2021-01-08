@@ -1,0 +1,6 @@
+/runtime/
+/vendor/
+/public/upload/
+/public/uploads/
+.svn
+

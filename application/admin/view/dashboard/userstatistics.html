@@ -1,0 +1,490 @@
+<script src="/assets/js/dist/echarts.js"></script>
+<script src="https://www.jq22.com/jquery/jquery-3.3.1.js"></script>
+<script src="/assets/js/jquery-1.3.2.min.js"></script>
+<style type="text/css">
+	.sm-st {
+		background: #fff;
+		padding: 20px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		margin-bottom: 20px;
+		-webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.05);
+		box-shadow: 0 1px 0px rgba(0, 0, 0, 0.05);
+	}
+
+	.sm-st-icon {
+		width: 60px;
+		height: 60px;
+		display: inline-block;
+		line-height: 60px;
+		text-align: center;
+		font-size: 30px;
+		background: #eee;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		float: left;
+		margin-right: 10px;
+		color: #fff;
+	}
+
+	.sm-st-info {
+		font-size: 12px;
+		padding-top: 2px;
+		text-align: center;
+	}
+
+	.sm-st-info span {
+		display: block;
+		font-size: 24px;
+		font-weight: 600;
+	}
+
+	.orange {
+		background: #fa8564 !important;
+	}
+
+	.tar {
+		background: #45cf95 !important;
+	}
+
+	.sm-st .green {
+		background: #86ba41 !important;
+	}
+
+	.pink {
+		background: #AC75F0 !important;
+	}
+
+	.yellow-b {
+		background: #fdd752 !important;
+	}
+
+	.stat-elem {
+
+		background-color: #fff;
+		padding: 18px;
+		border-radius: 40px;
+
+	}
+
+	.stat-info {
+		text-align: center;
+		background-color: #fff;
+		border-radius: 5px;
+		margin-top: -5px;
+		padding: 8px;
+		-webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.05);
+		box-shadow: 0 1px 0px rgba(0, 0, 0, 0.05);
+		font-style: italic;
+	}
+
+	.stat-icon {
+		text-align: center;
+		margin-bottom: 5px;
+	}
+
+	.st-red {
+		background-color: #F05050;
+	}
+
+	.st-green {
+		background-color: #27C24C;
+	}
+
+	.st-violet {
+		background-color: #7266ba;
+	}
+
+	.st-blue {
+		background-color: #23b7e5;
+	}
+
+	.stats .stat-icon {
+		color: #28bb9c;
+		display: inline-block;
+		font-size: 26px;
+		text-align: center;
+		vertical-align: middle;
+		width: 50px;
+		float: left;
+	}
+
+	.stat {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: inline-block;
+		margin-right: 10px;
+	}
+
+	.stat .value {
+		font-size: 20px;
+		line-height: 24px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-weight: 500;
+	}
+
+	.stat .name {
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.stat.lg .value {
+		font-size: 26px;
+		line-height: 28px;
+	}
+
+	.stat.lg .name {
+		font-size: 16px;
+	}
+
+	.stat-col .progress {
+		height: 2px;
+	}
+
+	.stat-col .progress-bar {
+		line-height: 2px;
+		height: 2px;
+	}
+
+	.item {
+		padding: 30px 0;
+	}
+
+	.secewid {
+		width: 60px !important;
+		float: right;
+	}
+	.panel-intro{
+		margin: 5px;
+	}
+</style>
+<div class="panel panel-default panel-intro">
+	<div class="panel-body">
+		<div id="myTabContent" class="tab-content">
+			<div class="tab-pane fade active in" id="one">
+				<div class="row">
+					<div class="col-sm-12 col-xs-6 form-inline">
+						<div class="form-group">
+							<label for="">用户概览统计</label>
+						</div>
+					</div>
+					<div class="col-sm-3 col-xs-6">
+						<div class="sm-st clearfix">
+							<!-- <span class="sm-st-icon st-red"><i class="fa fa-users"></i></span> -->
+							<div class="sm-st-info">
+								<span>9553</span>
+								在线人数
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 col-xs-6">
+						<div class="sm-st clearfix">
+							<!-- <span class="sm-st-icon st-violet"><i class="fa fa-book"></i></span> -->
+							<div class="sm-st-info">
+								<span>233</span>
+								停止使用用户数量
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 col-xs-6">
+						<div class="sm-st clearfix">
+							<!-- <span class="sm-st-icon st-blue"><i class="fa fa-shopping-bag"></i></span> -->
+							<div class="sm-st-info">
+								<span>952</span>
+								入驻企业量
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 col-xs-6">
+						<div class="sm-st clearfix">
+							<!-- <span class="sm-st-icon st-green"><i class="fa fa-cny"></i></span> -->
+							<div class="sm-st-info">
+								<span>62</span>
+								企业员工平均数量
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-7 col-xs-6 form-inline">
+						<div class="col-sm-12 col-xs-6">
+							<div class="form-group" style="border-bottom: 1px solid rgb(242, 242, 242);width: 100%; padding-bottom: 10px;position: relative;line-height: 26px;">
+								<label for="">在线用户概览统计</label>
+							</div>
+						</div>
+						<div class="col-sm-6 col-xs-6" style="border-top: 1px solid rgb(242, 242, 242);"> 
+							<div class="" id="report_one" style="width:100%;float: left;" >
+								
+							</div>
+						</div>
+						<div class="col-sm-6 col-xs-6" style="border-top: 1px solid rgb(242, 242, 242);">
+							<div class="" id="report_two" style="width:100%;float: left;" >
+								
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-5 col-xs-6 form-inline">
+						<div class="form-group" style="border-bottom: 1px solid rgb(242, 242, 242);width: 100%;padding-bottom: 10px;">
+							<label for="">用户增同比</label>
+							<input type="datetime" id="start_time_one" style="width: 130px;" class="form-control datetimepicker" name="start_time_one" placeholder="开始时间" data-date-format=" YYYY-MM-DD"  />
+							<input type="datetime" id="end_time_one" style="width: 130px;" class="form-control datetimepicker" name="end_time_one" placeholder="结束时间" data-date-format=" YYYY-MM-DD"  />
+							<button type="button" class="btn btn-info btn-sm" id="polling_two">查询</button>
+						</div>
+						<div class="" id="report_three" style="width:100%;float: left;" >
+							
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4 col-xs-6">
+						<div class="col-sm-12 col-xs-6">
+							<div class="form-group" style="border-bottom: 1px solid rgb(242, 242, 242);">
+								<label for="">语言使用统计</label>
+							</div>
+							<div class="" id="report_four" style="width:100%;float: left;" >
+								
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4 col-xs-6">
+						<div class="col-sm-12 col-xs-6">
+							<div class="form-group" style="border-bottom: 1px solid rgb(242, 242, 242);">
+								<label for="">企业注册类型用户统计</label>
+							</div>
+							<div class="" id="report_five" style="width:100%;float: left;" >
+								
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4 col-xs-6">
+						<div class="col-sm-12 col-xs-6">
+							<div class="form-group" style="border-bottom: 1px solid rgb(242, 242, 242);">
+								<label for="">用户APP客户端颜色使用统计</label>
+							</div>
+							<div class="" id="report_six" style="width:100%;float: left;" >
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3 col-xs-6">
+						<div class="form-group"  style="border-bottom: 1px solid rgb(242, 242, 242);">
+							<label for="">企业注册类型用户统计</label>
+						</div>
+						<div class="" id="report_seven" style="width:100%;float: left;" >
+							
+						</div>
+					</div>
+					<div class="col-sm-9 col-xs-6">
+						<div class="form-group"  style="border-bottom: 1px solid rgb(242, 242, 242);">
+							<label for="">功能使用率统计</label>
+						</div>
+						<div class="" id="report_eight" style="width:100%;float: left;" >
+							
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-5 col-xs-6">
+						<div class="form-group"  style="border-bottom: 1px solid rgb(242, 242, 242);">
+							<label for="">用户登录统计</label>
+						</div>
+						<div class="" id="report_nine" style="width:100%;float: left;" >
+							
+						</div>
+					</div>
+					<div class="col-sm-7 col-xs-6">
+						<div class="form-group"  style="border-bottom: 1px solid rgb(242, 242, 242);">
+							<label for="">用户平台使用统计</label>
+						</div>
+						<div class="" id="report_ten" style="width:100%;float: left;" >
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script id="newstpl" type="text/html">
+	<ul class="nav nav-stacked">
+        <%for(var i=0;i < news.length;i++){%>
+        <%var item=news[i];%>
+        <li>
+            <a href="<%=item.url%>" target="_blank">
+                <span class="text"><%=item.title%></span>
+            </a>
+        </li>
+        <%}%>
+    </ul>
+</script>
+<script id="discussiontpl" type="text/html">
+	<ul class="products-list product-list-in-box">
+        <%for(var i=0;i < news.length;i++){%>
+        <%var item=news[i];%>
+        <li class="item">
+            <div class="">
+                <a href="<%=item.url%>" target="_blank" class="product-title"><%=item.title%>
+                    <span class="label label-warning pull-right"><%=item.comments_count%></span></a>
+                <span class="product-description">
+                    <%=item.last_time%>
+                </span>
+            </div>
+        </li>
+        <%}%>
+    </ul>
+</script>
+<script>
+	var Orderdata = {
+		column: {: json_encode(array_keys($paylist))
+		},
+		paydata: {: json_encode(array_values($paylist))
+		},
+		createdata: {: json_encode(array_values($createlist))
+		},
+	};
+	// var option = {
+	//     xAxis: {
+	//         type: 'category',
+	//         data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+	//     },
+	//     yAxis: {
+	//         type: 'value'
+	//     },
+	//     series: [{
+	//         data: [120, 200, 150, 80, 70, 110, 130],
+	//         data:[],
+	//         type: 'bar'
+	//     }]
+	// };
+
+
+	// $.get('{:url("/admin/Dashboard/report_one")}').done(function (data) {
+	//     // 填入数据
+	//     // myChart.setOption({
+	//     //     xAxis: {
+	//     //         type: 'category',
+	//     //         data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+	//     //     },
+	//     //     yAxis: {
+	//     //         type: 'value'
+	//     //     },
+	//     //     series: [{
+	//     //         data: data,
+	//     //         type: 'bar'
+	//     //     }]
+	//     // });
+	//     // 饼图
+	//     // option = {
+	//     //     backgroundColor: '#2c343c',
+	//     //     tooltip : {
+	//     //         trigger: 'item',
+	//     //         formatter: "{a} <br/>{b} : {c} ({d}%)"
+	//     //     },
+	//     //     visualMap: {
+	//     //         show: false,
+	//     //         min: 80,
+	//     //         max: 600,
+	//     //         inRange: {
+	//     //             colorLightness: [0, 1]
+	//     //         }
+	//     //     },
+	//     //     series : [
+	//     //         {
+	//     //             name:'访问来源',
+	//     //             type:'pie',
+	//     //             radius : '55%',
+	//     //             center: ['50%', '50%'],
+	//     //             data:data.sort(function (a, b) { return a.value - b.value; }),
+	//     //             roseType: 'radius',
+	//     //             label: {
+	//     //                 normal: {
+	//     //                     textStyle: {
+	//     //                         color: 'rgba(255, 255, 255, 0.3)'
+	//     //                     }
+	//     //                 }
+	//     //             },
+	//     //             labelLine: {
+	//     //                 normal: {
+	//     //                     lineStyle: {
+	//     //                         color: 'rgba(255, 255, 255, 0.3)'
+	//     //                     },
+	//     //                     smooth: 0.2,
+	//     //                     length: 10,
+	//     //                     length2: 20
+	//     //                 }
+	//     //             },
+	//     //             itemStyle: {
+	//     //                 normal: {
+	//     //                     color: '#c23531',
+	//     //                     shadowBlur: 200,
+	//     //                     shadowColor: 'rgba(0, 0, 0, 0.5)'
+	//     //                 }
+	//     //             },
+
+	//     //             animationType: 'scale',
+	//     //             animationEasing: 'elasticOut',
+	//     //             animationDelay: function (idx) {
+	//     //                 return Math.random() * 200;
+	//     //             }
+	//     //         }
+	//     //     ]
+	//     // };
+	//     // 折线图
+	//     option = {
+	//         title: {
+	//             text: '折线图堆叠'
+	//         },
+	//         tooltip: {
+	//             trigger: 'axis'
+	//         },
+	//         legend: {
+	//             data:['总数量','总金额']
+	//         },
+	//         grid: {
+	//             left: '3%',
+	//             right: '4%',
+	//             bottom: '3%',
+	//             containLabel: true
+	//         },
+	//         toolbox: {
+	//             feature: {
+	//                 saveAsImage: {}
+	//             }
+	//         },
+	//         xAxis: {
+	//             type: 'category',
+	//             boundaryGap: false,
+	//             data: data.date
+	//         },
+	//         yAxis: {
+	//             type: 'value'
+	//         },
+	//         series: data.data
+	//     };
+
+	//     myChart.setOption(option,true);
+	// });
+</script>
+<script>
+	var one = $('#report_one').width();
+	$('#report_one').height(one);
+	$('#report_two').height(one);
+	$('#report_three').height(one);
+	var four=$('#report_four').width();
+	$('#report_four').height(four);
+	$('#report_five').height(four);
+	$('#report_six').height(four);
+	var seven=$('#report_seven').width();
+	$('#report_seven').height(seven);
+	$('#report_eight').height(seven);
+	
+	$('#report_nine').height(seven);
+	$('#report_ten').height(seven);
+</script>
